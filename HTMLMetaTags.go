@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/go-catupiry/catu"
-	"gitlab.com/www.monitordomercado.com.br/mm/system_settings"
+	"github.com/go-catupiry/system_settings"
 )
 
 type HTMLMetaTags struct {

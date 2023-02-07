@@ -2,10 +2,10 @@ package metatags
 
 import (
 	"github.com/go-catupiry/catu"
+	"github.com/go-catupiry/system_settings"
 	"github.com/gookit/event"
 	"github.com/labstack/echo/v4"
 	"github.com/sirupsen/logrus"
-	"gitlab.com/www.monitordomercado.com.br/mm/system_settings"
 )
 
 type Plugin struct {
