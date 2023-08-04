@@ -1,4 +1,4 @@
-# [in development] Catupiry metatag plugin
+# [in development] Bolo metatag plugin
 
 - Supports system settings configuration
 

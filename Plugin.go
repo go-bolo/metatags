@@ -1,24 +1,24 @@
 package metatags
 
 import (
-	"github.com/go-catupiry/catu"
-	"github.com/go-catupiry/system_settings"
+	"github.com/go-bolo/bolo"
+	"github.com/go-bolo/system_settings"
 	"github.com/gookit/event"
 	"github.com/labstack/echo/v4"
 	"github.com/sirupsen/logrus"
 )
 
 type Plugin struct {
-	catu.Pluginer
+	bolo.Pluginer
 	Name string
-	App  catu.App
+	App  bolo.App
 }
 
 func (r *Plugin) GetName() string {
 	return r.Name
 }
 
-func (r *Plugin) Init(app catu.App) error {
+func (r *Plugin) Init(app bolo.App) error {
 	logrus.Debug(r.GetName() + " Init")
 	r.App = app
 
@@ -33,7 +33,7 @@ func (r *Plugin) Init(app catu.App) error {
 	return nil
 }
 
-func (p *Plugin) bindMiddlewares(app catu.App) error {
+func (p *Plugin) bindMiddlewares(app bolo.App) error {
 	logrus.Debug("MMPlugin.bindMiddlewares " + p.GetName())
 
 	router := app.GetRouter()
@@ -42,17 +42,17 @@ func (p *Plugin) bindMiddlewares(app catu.App) error {
 	return nil
 }
 
-func (p *Plugin) setTemplateFunctions(app catu.App) error {
+func (p *Plugin) setTemplateFunctions(app bolo.App) error {
 	app.SetTemplateFunction("renderMetatags", renderMetatags)
 
 	return nil
 }
 
-func (r *Plugin) BindRoutes(app catu.App) error {
+func (r *Plugin) BindRoutes(app bolo.App) error {
 	return nil
 }
 
-func (r *Plugin) SetTemplateFuncMap(app catu.App) error {
+func (r *Plugin) SetTemplateFuncMap(app bolo.App) error {
 	return nil
 }
 

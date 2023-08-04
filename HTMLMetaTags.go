@@ -4,8 +4,8 @@ import (
 	"html/template"
 	"time"
 
-	"github.com/go-catupiry/catu"
-	"github.com/go-catupiry/system_settings"
+	"github.com/go-bolo/bolo"
+	"github.com/go-bolo/system_settings"
 )
 
 type HTMLMetaTags struct {
@@ -33,7 +33,7 @@ func (r *HTMLMetaTags) Get(key string) string {
 	return ""
 }
 
-func (r *HTMLMetaTags) Render(ctx *catu.RequestContext) template.HTML {
+func (r *HTMLMetaTags) Render(ctx *bolo.RequestContext) template.HTML {
 	html := ""
 	pagePath := ""
 	twitterSite := system_settings.Get("@_TWITTER")
@@ -49,7 +49,7 @@ func (r *HTMLMetaTags) Render(ctx *catu.RequestContext) template.HTML {
 		if pathBeforeAlias != "" {
 			pagePath = pathBeforeAlias
 		} else {
-			pagePath = ctx.EchoContext.Request().URL.Path
+			pagePath = ctx.Request().URL.Path
 		}
 	} else {
 		pagePath = r.Canonical
