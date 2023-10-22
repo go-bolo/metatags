@@ -74,6 +74,10 @@ func (r *Plugin) setDefaultMetatags() echo.MiddlewareFunc {
 	}
 }
 
+func (r *Plugin) GetMigrations() []*bolo.Migration {
+	return []*bolo.Migration{}
+}
+
 type PluginCfgs struct{}
 
 func NewPlugin(cfg *PluginCfgs) *Plugin {
